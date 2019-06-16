@@ -1,24 +1,119 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--LoginVC-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="LoginVC" customModule="chatApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rhY-vR-Mso">
+                                <rect key="frame" x="20" y="360" width="335" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6pL-I6-tpw">
+                                <rect key="frame" x="20" y="410" width="335" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B8T-3K-Ve5">
+                                <rect key="frame" x="112" y="510" width="150" height="30"/>
+                                <state key="normal" title="Login / Sign up"/>
+                                <connections>
+                                    <action selector="userAuth:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rTm-3r-QYi"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KH6-ME-v4D">
+                                <rect key="frame" x="112" y="561" width="150" height="30"/>
+                                <state key="normal" title="Anonymous Login"/>
+                                <connections>
+                                    <action selector="anonymousTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fpy-3F-Krb"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="KH6-ME-v4D" firstAttribute="top" secondItem="B8T-3K-Ve5" secondAttribute="bottom" constant="21" id="59r-Ld-rOd"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="B8T-3K-Ve5" secondAttribute="trailing" constant="113" id="9Pw-X9-DnT"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="KH6-ME-v4D" secondAttribute="trailing" constant="113" id="CeE-Ie-vHc"/>
+                            <constraint firstItem="rhY-vR-Mso" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="E06-zB-zWR"/>
+                            <constraint firstItem="B8T-3K-Ve5" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="112" id="Qsn-Ev-lx8"/>
+                            <constraint firstItem="6pL-I6-tpw" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="dKD-d0-dp2"/>
+                            <constraint firstItem="6pL-I6-tpw" firstAttribute="top" secondItem="rhY-vR-Mso" secondAttribute="bottom" constant="20" id="eE4-Jc-Na1"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="KH6-ME-v4D" secondAttribute="bottom" constant="76" id="ivw-qS-kXJ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="6pL-I6-tpw" secondAttribute="trailing" constant="20" id="koJ-vi-D8d"/>
+                            <constraint firstItem="B8T-3K-Ve5" firstAttribute="top" secondItem="6pL-I6-tpw" secondAttribute="bottom" constant="70" id="lze-4n-Apm"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="rhY-vR-Mso" secondAttribute="trailing" constant="20" id="sIN-2h-VZ2"/>
+                            <constraint firstItem="KH6-ME-v4D" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="112" id="yLU-An-hQW"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="email" destination="rhY-vR-Mso" id="0Nb-Vu-Oh7"/>
+                        <outlet property="password" destination="6pL-I6-tpw" id="gFm-l1-kEn"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="132" y="111.99400299850076"/>
+        </scene>
+        <!--ChattingVC-->
+        <scene sceneID="NGm-ig-YmT">
+            <objects>
+                <viewController storyboardIdentifier="toMessage" id="plx-2a-QOG" customClass="chattingVC" customModule="chatApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="RQy-f7-0lz">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="58z-zk-cv3"/>
+                    </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="bgy-vc-gAl">
+                        <barButtonItem key="leftBarButtonItem" title="Log out" style="plain" id="zgp-x3-0OC">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="logoutTapped:" destination="plx-2a-QOG" id="sV5-Me-2LS"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OxZ-V5-RmR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1935.2" y="111.99400299850076"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Zg5-wk-nSB">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cKG-o4-swg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="bGI-fP-bqy" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="pkG-4N-t3U">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.14117647058823529" green="0.26666666666666666" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="plx-2a-QOG" kind="relationship" relationship="rootViewController" id="OiL-ht-sfY"/>
+                    </connections>
+                </navigationController>
+            </objects>
+            <point key="canvasLocation" x="996" y="111.99400299850076"/>
         </scene>
     </scenes>
 </document>
